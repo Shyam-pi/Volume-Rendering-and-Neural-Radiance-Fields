@@ -1,6 +1,6 @@
 # Volume Rendering and Neural Radiance Fields
 
-**Note**:  I completed this project as a part of the course CMSC848F - 3D Vision, Fall 2023, at the University of Maryland. The original tasks and description can be found at https://github.com/848f-3DVision/assignment2 
+**Note**:  I completed this project as a part of the course CMSC848F - 3D Vision, Fall 2023, at the University of Maryland. The original tasks and description can be found at https://github.com/848f-3DVision/assignment3 
 
 **Goals**: In this project, we implement a simple volumetric renderer, with the help of which we implement a Neural Radiance Field (NeRF) for implicit 3D representation and novel view synthesis.
  
