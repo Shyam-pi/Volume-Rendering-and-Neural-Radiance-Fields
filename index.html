@@ -1,32 +1,24 @@
                     <meta charset="utf-8" emacsmode="-*- markdown -*">
-                            **CMSC848F Assignment 3**
+                            **Volume Rendering and Neural Radiance Fields**
 
-**Name    : Shyamsundar Prabhakar Indra**
-
-**UID     : 119360842**
-
-**Dir. ID : shyampi**
-
-This page documents the results corresponding to Assignment 3 of CMSC848F - 3D Vision, Fall 2023, at the University of Maryland.
-
-The tasks can be found at https://github.com/848f-3DVision/assignment3
+The codes and steps to run them can be found here: https://github.com/Shyam-pi/Volume-Rendering-and-Neural-Radiance-Fields
 
 Differentiable Volume Rendering
 ==============================================================
 
-Ray Sampling
+Ray Sampling Visualization
 --------------------------------------------------------------
 
 ![Grid Visualization](images/grid_vis.png) ![Rays Visualization](images/ray_vis.png)
 
 
-Point Sampling
+Point Sampling Visualization
 --------------------------------------------------------------
 
 ![Point samples from 1st camera](images/pcl_vis.png)
 
 
-Volume Rendering
+Volume Rendering of the given box
 --------------------------------------------------------------
 
 ![Volume render of the given box](images/part_1.gif) ![Depth render of the given box](images/depth_map.png)
@@ -37,6 +29,7 @@ Optimizing a Basic Implicit Volume
 
 Parameters of the Optimized Box
 --------------------------------------------------------------
+The following output can be visualized from the terminal:
 
 Box center: (0.25, 0.25, 0.00)
 
@@ -44,6 +37,8 @@ Box side lengths: (2.00, 1.50, 1.50)
 
 Visualization - Before and after training
 --------------------------------------------------------------
+The following is a visualization of how the implicit volume box was before the training and how it gets optimized after the training:
+
 ![Before training 1](images/part_2_before_training_0.png) ![Before training 2](images/part_2_before_training_1.png) ![Before training 3](images/part_2_before_training_2.png) ![Before training 4](images/part_2_before_training_3.png) 
 
 ![After training 1](images/part_2_after_training_0.png) ![After training 2](images/part_2_after_training_1.png) ![After training 3](images/part_2_after_training_2.png) ![After training 4](images/part_2_after_training_3.png) 
@@ -52,14 +47,18 @@ Visualization - Before and after training
 Visualization - Final optimized volume
 --------------------------------------------------------------
 
+360 degrees visualization of the final optimized volume can be found below:
+
 ![Spiral Sequence of Optimized Volume](images/part_2.gif)
 
 
-Optimizing a Basic Implicit Volume
+Optimizing a Basic Implicit Volume using NeRF
 ==============================================================
 
 Visualization - Changes with every 10 epochs
 --------------------------------------------------------------
+
+The following GIFs show how the implicit volume gets optimized by the NeRF over different epochs:
 
 ![10 epochs](images/part_3_epochs_10.gif) ![20 epochs](images/part_3_epochs_20.gif) ![30 epochs](images/part_3_epochs_30.gif) ![40 epochs](images/part_3_epochs_40.gif) ![50 epochs](images/part_3_epochs_50.gif) 
 ![60 epochs](images/part_3_epochs_60.gif) ![70 epochs](images/part_3_epochs_70.gif) ![80 epochs](images/part_3_epochs_80.gif) ![90 epochs](images/part_3_epochs_90.gif) ![100 epochs](images/part_3_epochs_100.gif) 
