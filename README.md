@@ -146,6 +146,13 @@ python main.py --config-name=nerf_lego
 
 This will create a NeRF with the `NeuralRadianceField` class in `implicit.py`, and use it as the `implicit_fn` in `VolumeRenderer`. It will also train a NeRF for 250 epochs on 128x128 images.
 
-Feel free to modify the experimental settings in `configs/nerf_lego.yaml` --- though the current settings should allow you to train a NeRF on low-resolution inputs in a reasonable amount of time. After training, a spiral rendering will be written to `images/part_3.gif`. It should look something like this:
+Feel free to modify the experimental settings in `configs/nerf_lego.yaml` --- though the current settings should allow you to train a NeRF on low-resolution inputs in a reasonable amount of time. After training, a spiral rendering will be written to `images/part_3.gif`. Below is a visualization of how the implicit volume optimized by the NeRF changes over different epochs of training:
 
-![Spiral Rendering of Part 3](ta_images/part_3.gif)
+Visualization - Changes with every 10 epochs
+--------------------------------------------------------------
+
+![10 epochs](images/part_3_epochs_10.gif) ![20 epochs](images/part_3_epochs_20.gif) ![30 epochs](images/part_3_epochs_30.gif) ![40 epochs](images/part_3_epochs_40.gif) ![50 epochs](images/part_3_epochs_50.gif) 
+![60 epochs](images/part_3_epochs_60.gif) ![70 epochs](images/part_3_epochs_70.gif) ![80 epochs](images/part_3_epochs_80.gif) ![90 epochs](images/part_3_epochs_90.gif) ![100 epochs](images/part_3_epochs_100.gif) 
+![110 epochs](images/part_3_epochs_110.gif) ![120 epochs](images/part_3_epochs_120.gif) ![130 epochs](images/part_3_epochs_130.gif) ![140 epochs](images/part_3_epochs_140.gif) ![150 epochs](images/part_3_epochs_150.gif) 
+![160 epochs](images/part_3_epochs_160.gif) ![170 epochs](images/part_3_epochs_170.gif) ![180 epochs](images/part_3_epochs_180.gif) ![190 epochs](images/part_3_epochs_190.gif) ![200 epochs](images/part_3_epochs_200.gif) 
+![210 epochs](images/part_3_epochs_210.gif) ![220 epochs](images/part_3_epochs_220.gif) ![230 epochs](images/part_3_epochs_230.gif) ![240 epochs](images/part_3_epochs_240.gif) ![250 epochs](images/part_3_epochs_250.gif) 
