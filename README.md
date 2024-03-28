@@ -4,7 +4,7 @@
 
 **Goals**: In this project, we implement a simple volumetric renderer, with the help of which we implement a Neural Radiance Field (NeRF) for implicit 3D representation and novel view synthesis.
  
-**Results**: All the results and inferences from this project can be found in this webpage : https://shyam-pi.github.io/single-image-to-3D-with-3D-ground-truth/
+**Results**: All the results and inferences from this project can be found in this webpage : https://shyam-pi.github.io/Volume-Rendering-and-Neural-Radiance-Fields/
 
 ##  0. Setup
 
