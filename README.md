@@ -24,7 +24,7 @@ The data for this assignment is provided in the github repo under `data/`. You d
 
 In the emission-absorption (EA) model , volumes are typically described by their *appearance* (e.g. emission) and *geometry* (absorption) at *every point* in 3D space. Firstly we implement a ***Differentiable Renderer*** for EA volumes, which we will use in the NeRF formulation as well. Differentiable renderers are extremely useful for 3D learning problems --- one reason is because they allow one to optimize scene parameters (i.e. perform inverse rendering) from image supervision only!
 
-##  1.1. Code structure
+###  1.1. Code structure
 
 There are four major components of our differentiable volume rendering pipeline:
 
@@ -39,11 +39,11 @@ The scene, sampler, and renderer are all packaged together under the `Model` cla
 
 The `RayBundle` class in `ray_utils.py`, which provides a convenient wrapper around several inputs to the volume rendering procedure per ray.
 
-##  1.2. Outline of tasks
+###  1.2. Outline of tasks
 
 In order to perform rendering, we have implemented the following routines:
 
-##  1.3. Ray sampling
+###  1.3. Ray sampling
 
 The `render_images` function in `main.py` loops through a set of cameras, generates rays for each pixel on a camera, and renders these rays using a `Model` instance.
 
@@ -61,7 +61,7 @@ The output should be similar to the below images:
 
 ![Grid](ta_images/grid.png)    ![Rays](ta_images/rays.png)
 
-##  1.4. Point sampling
+###  1.4. Point sampling
 
 The next component is the `StratifiedSampler` in `sampler.py`. We have implemented the forward method, which:
 
@@ -75,7 +75,7 @@ Use the `render_points` method in `render_functions.py` in order to visualize th
 
 ![Sample points](ta_images/sample_points.png)
 
-##  1.5. Volume rendering
+###  1.5. Volume rendering
 
 Finally, we can implement volume rendering! With the `configs/box.yaml` configuration, we have an `SDFVolume` instance describing a box. The code for this function in `implicit.py`, which converts a signed distance function into a volume. If you want, you can even implement your own `SDFVolume` classes by creating new signed distance function class, and adding it to `sdf_dict` in `implicit.py`. Take a look at [this great web page](https://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm) for formulas for some simple/complex SDFs.
 
@@ -103,14 +103,14 @@ The visualization for spiral rendering of this implicit volume and its correspon
 
 ##  2. Optimizing a basic implicit volume
 
-##  2.1. Random ray sampling
+###  2.1. Random ray sampling
 
 We can use the differentiable volume renderer to optimize the parameters of a volume! The basic training loop can be found in `train` method in `main.py`.
 
 Depending on how many sample points we take for each ray, volume rendering can consume a lot of memory on the GPU (especially during the backward pass of gradient descent). Because of this, it usually makes sense to sample a subset of rays from a full image for each training iteration. In order to do this, we have implemented the `get_random_pixels_from_image` method in `ray_utils.py`
 
 
-##  2.2. Loss and training (5 points)
+###  2.2. Loss and training (5 points)
 
 Mean squared error between the predicted colors and ground truth colors `rgb_gt` is the loss function.
 
@@ -121,7 +121,7 @@ python main.py --config-name=train_box
 
 This will optimize the position and side lengths of a box, given a few ground truth images with known camera poses (in the `data` folder).
 
-##  2.3. Visualization
+###  2.3. Visualization
 
 The code renders a spiral sequence of the optimized volume in `images/part_2.gif` which must look like the following
 
@@ -133,7 +133,7 @@ In this part, we implement an implicit volume as a Multi-Layer Perceptron (MLP) 
 
 We then use this implicit volume to optimize a scene from a set of RGB images.
 
-## Implementation
+### Implementation
 
 Here are a few things to note:
 
@@ -142,7 +142,7 @@ Here are a few things to note:
 3. `Sigmoid` activation is used to map the remaining raw network outputs to color
 4. *Positional Encoding* of the input is used in the network to achieve higher quality. Implementation of positional encoding can be found in the `HarmonicEmbedding` class in `implicit.py`.
 
-## Visualization
+### Visualization
 You can train a NeRF on the lego bulldozer dataset with
 
 ```bash
